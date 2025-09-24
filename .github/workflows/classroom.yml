@@ -19,7 +19,7 @@ jobs:
       with:
         test-name: scannerCreate
         setup-command: "mvn compile"
-        command: mvn -Dtest=Unit0Test#testScannerCreate test
+        command: mvn -Dtest=ScannerPracticeTest#testScannerCreate test
         timeout: 10
         max-score: 10
     - name: lineReads
@@ -28,7 +28,7 @@ jobs:
       with:
         test-name: lineReads
         setup-command: mvn compile
-        command: mvn -Dtest=Unit0Test#testLineReads test
+        command: mvn -Dtest=ScannerPracticeTest#testLineReads test
         timeout: 10
         max-score: 10
     - name: sum
@@ -37,7 +37,7 @@ jobs:
       with:
         test-name: sum
         setup-command: mvn compile
-        command: mvn -Dtest=Unit0Test#testSum test
+        command: mvn -Dtest=ScannerPracticeTest#testSum test
         timeout: 10
         max-score: 15
     - name: calculateBill
@@ -46,7 +46,7 @@ jobs:
       with:
         test-name: calculateBill
         setup-command: mvn compile
-        command: mvn -Dtest=Unit0Test#testCalculateBill test
+        command: mvn -Dtest=ScannerPracticeTest#testCalculateBill test
         timeout: 10
         max-score: 15
     - name: mostExpensiveItem
@@ -55,7 +55,7 @@ jobs:
       with:
         test-name: mostExpensiveItem
         setup-command: mvn compile
-        command: mvn -Dtest=Unit0Test#testMostExpensiveItem test
+        command: mvn -Dtest=ScannerPracticeTest#testMostExpensiveItem test
         timeout: 10
         max-score: 10
     - name: copyToOutput
@@ -64,7 +64,7 @@ jobs:
       with:
         test-name: copyToOutput
         setup-command: mvn compile
-        command: mvn -Dtest=Unit0Test#testCopyToOutput test
+        command: mvn -Dtest=ScannerPracticeTest#testCopyToOutput test
         timeout: 10
         max-score: 10
     - name: singleLineRead
@@ -73,7 +73,7 @@ jobs:
       with:
         test-name: singleLineRead
         setup-command: mvn compile
-        command: mvn -Dtest=Unit0Test#testSingleLineRead test
+        command: mvn -Dtest=ScannerPracticeTest#testSingleLineRead test
         timeout: 10
         max-score: 10
     - name: miniSearchEngine
@@ -82,7 +82,7 @@ jobs:
       with:
         test-name: miniSearchEngine
         setup-command: mvn compile
-        command: mvn -Dtest=Unit0Test#testMiniSearchEngine test
+        command: mvn -Dtest=ScannerPracticeTest#testMiniSearchEngine test
         timeout: 10
         max-score: 10
     - name: miniSearchEngineRavenCase
@@ -91,7 +91,7 @@ jobs:
       with:
         test-name: miniSearchEngineRavenCase
         setup-command: mvn compile
-        command: mvn -Dtest=Unit0Test#testMiniSearchEngineRavenCase test
+        command: mvn -Dtest=ScannerPracticeTest#testMiniSearchEngineRavenCase test
         timeout: 10
         max-score: 10
     - name: Autograding Reporter
