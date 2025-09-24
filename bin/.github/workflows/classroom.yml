@@ -1,0 +1,90 @@
+name: Autograding Tests
+'on':
+- push
+- repository_dispatch
+permissions:
+  checks: write
+  actions: read
+  contents: read
+jobs:
+  run-autograding-tests:
+    runs-on: ubuntu-latest
+    if: github.actor != 'github-classroom[bot]'
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+    - name: sumNumbers
+      id: sumnumbers
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: sumNumbers
+        setup-command: mvn compile
+        command: mvn -Dtest=Unit4Test#testSumNumbers test
+        timeout: 10
+        max-score: 10
+    - name: repeatString
+      id: repeatstring
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: repeatString
+        setup-command: mvn compile
+        command: mvn -Dtest=Unit4Test#testRepeatString test
+        timeout: 10
+        max-score: 10
+    - name: findFactorial
+      id: findfactorial
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: findFactorial
+        setup-command: mvn compile
+        command: mvn -Dtest=Unit4Test#testFindFactorial test
+        timeout: 10
+        max-score: 15
+    - name: countVowels
+      id: countvowels
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: countVowels
+        setup-command: mvn compile
+        command: mvn -Dtest=Unit4Test#testCountVowels test
+        timeout: 10
+        max-score: 15
+    - name: isPalindrome
+      id: ispalindrome
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: isPalindrome
+        setup-command: mvn compile
+        command: mvn -Dtest=Unit4Test#testIsPalindrome test
+        timeout: 10
+        max-score: 20
+    - name: printAsteriskPatterns
+      id: printasteriskpatterns
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: printAsteriskPatterns
+        setup-command: mvn compile
+        command: mvn -Dtest=Unit4Test#testPrintAsteriskPatterns test
+        timeout: 10
+        max-score: 15
+    - name: multiplicationTable
+      id: multiplicationtable
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: multiplicationTable
+        setup-command: mvn compile
+        command: mvn -Dtest=Unit4Test#testMultiplicationTable test
+        timeout: 10
+        max-score: 15
+    - name: Autograding Reporter
+      uses: classroom-resources/autograding-grading-reporter@v1
+      env:
+        SUMNUMBERS_RESULTS: "${{steps.sumnumbers.outputs.result}}"
+        REPEATSTRING_RESULTS: "${{steps.repeatstring.outputs.result}}"
+        FINDFACTORIAL_RESULTS: "${{steps.findfactorial.outputs.result}}"
+        COUNTVOWELS_RESULTS: "${{steps.countvowels.outputs.result}}"
+        ISPALINDROME_RESULTS: "${{steps.ispalindrome.outputs.result}}"
+        PRINTASTERISKPATTERNS_RESULTS: "${{steps.printasteriskpatterns.outputs.result}}"
+        MULTIPLICATIONTABLE_RESULTS: "${{steps.multiplicationtable.outputs.result}}"
+      with:
+        runners: sumnumbers,repeatstring,findfactorial,countvowels,ispalindrome,printasteriskpatterns,multiplicationtable

@@ -1,0 +1,110 @@
+name: Autograding Tests
+'on':
+- push
+- repository_dispatch
+permissions:
+  checks: write
+  actions: read
+  contents: read
+jobs:
+  run-autograding-tests:
+    runs-on: ubuntu-latest
+    if: github.actor != 'github-classroom[bot]'
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+    - name: scannerCreate
+      id: scannercreate
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: scannerCreate
+        setup-command: "mvn compile"
+        command: mvn -Dtest=Unit0Test#testScannerCreate test
+        timeout: 10
+        max-score: 10
+    - name: lineReads
+      id: linereads
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: lineReads
+        setup-command: mvn compile
+        command: mvn -Dtest=Unit0Test#testLineReads test
+        timeout: 10
+        max-score: 10
+    - name: sum
+      id: sum
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: sum
+        setup-command: mvn compile
+        command: mvn -Dtest=Unit0Test#testSum test
+        timeout: 10
+        max-score: 15
+    - name: calculateBill
+      id: calculatebill
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: calculateBill
+        setup-command: mvn compile
+        command: mvn -Dtest=Unit0Test#testCalculateBill test
+        timeout: 10
+        max-score: 15
+    - name: mostExpensiveItem
+      id: mostexpensiveitem
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: mostExpensiveItem
+        setup-command: mvn compile
+        command: mvn -Dtest=Unit0Test#testMostExpensiveItem test
+        timeout: 10
+        max-score: 10
+    - name: copyToOutput
+      id: copytooutput
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: copyToOutput
+        setup-command: mvn compile
+        command: mvn -Dtest=Unit0Test#testCopyToOutput test
+        timeout: 10
+        max-score: 10
+    - name: singleLineRead
+      id: singlelineread
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: singleLineRead
+        setup-command: mvn compile
+        command: mvn -Dtest=Unit0Test#testSingleLineRead test
+        timeout: 10
+        max-score: 10
+    - name: miniSearchEngine
+      id: minisearchengine
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: miniSearchEngine
+        setup-command: mvn compile
+        command: mvn -Dtest=Unit0Test#testMiniSearchEngine test
+        timeout: 10
+        max-score: 10
+    - name: miniSearchEngineRavenCase
+      id: minisearchengineravencase
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: miniSearchEngineRavenCase
+        setup-command: mvn compile
+        command: mvn -Dtest=Unit0Test#testMiniSearchEngineRavenCase test
+        timeout: 10
+        max-score: 10
+    - name: Autograding Reporter
+      uses: classroom-resources/autograding-grading-reporter@v1
+      env:
+        SCANNERCREATE_RESULTS: "${{steps.scannercreate.outputs.result}}"
+        LINEREADS_RESULTS: "${{steps.linereads.outputs.result}}"
+        SUM_RESULTS: "${{steps.sum.outputs.result}}"
+        CALCULATEBILL_RESULTS: "${{steps.calculatebill.outputs.result}}"
+        MOSTEXPENSIVEITEM_RESULTS: "${{steps.mostexpensiveitem.outputs.result}}"
+        COPYTOOUTPUT_RESULTS: "${{steps.copytooutput.outputs.result}}"
+        SINGLELINEREAD_RESULTS: "${{steps.singlelineread.outputs.result}}"
+        MINISEARCHENGINE_RESULTS: "${{steps.minisearchengine.outputs.result}}"
+        MINISEARCHENGINERAVENCASE_RESULTS: "${{steps.minisearchengineravencase.outputs.result}}"
+      with:
+        runners: scannercreate,linereads,sum,calculatebill,mostexpensiveitem,copytooutput,singlelineread,minisearchengine,minisearchengineravencase

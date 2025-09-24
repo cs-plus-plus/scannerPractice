@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.2" name="unit0.Unit0Test" time="0.096" tests="9" errors="0" skipped="0" failures="0">
+  <properties>
+    <property name="java.specification.version" value="17"/>
+    <property name="sun.cpu.isalist" value="amd64"/>
+    <property name="sun.jnu.encoding" value="Cp1252"/>
+    <property name="java.class.path" value="C:\Users\kevin.hare\eclipse-workspace\unit-unknown-tests\target\test-classes;C:\Users\kevin.hare\eclipse-workspace\unit-unknown-tests\target\classes;C:\Users\kevin.hare\.m2\repository\org\junit\jupiter\junit-jupiter\5.6.2\junit-jupiter-5.6.2.jar;C:\Users\kevin.hare\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.6.2\junit-jupiter-api-5.6.2.jar;C:\Users\kevin.hare\.m2\repository\org\apiguardian\apiguardian-api\1.1.0\apiguardian-api-1.1.0.jar;C:\Users\kevin.hare\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\kevin.hare\.m2\repository\org\junit\platform\junit-platform-commons\1.6.2\junit-platform-commons-1.6.2.jar;C:\Users\kevin.hare\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.6.2\junit-jupiter-params-5.6.2.jar;C:\Users\kevin.hare\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.6.2\junit-jupiter-engine-5.6.2.jar;C:\Users\kevin.hare\.m2\repository\org\junit\platform\junit-platform-engine\1.6.2\junit-platform-engine-1.6.2.jar;"/>
+    <property name="java.vm.vendor" value="Eclipse Adoptium"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="user.variant" value=""/>
+    <property name="java.vendor.url" value="https://adoptium.net/"/>
+    <property name="user.timezone" value="America/Los_Angeles"/>
+    <property name="os.name" value="Windows 10"/>
+    <property name="java.vm.specification.version" value="17"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="user.country" value="US"/>
+    <property name="sun.boot.library.path" value="C:\Users\Public\Documents\Eclipse 2024-R\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.10.v20240120-1143\jre\bin"/>
+    <property name="sun.java.command" value="C:\Users\kevin.hare\AppData\Local\Temp\surefire3133492245655806383\surefirebooter-20250922093133740_3.jar C:\Users\kevin.hare\AppData\Local\Temp\surefire3133492245655806383 2025-09-22T09-31-33_342-jvmRun1 surefire-20250922093133740_1tmp surefire_0-20250922093133740_2tmp"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="surefire.test.class.path" value="C:\Users\kevin.hare\eclipse-workspace\unit-unknown-tests\target\test-classes;C:\Users\kevin.hare\eclipse-workspace\unit-unknown-tests\target\classes;C:\Users\kevin.hare\.m2\repository\org\junit\jupiter\junit-jupiter\5.6.2\junit-jupiter-5.6.2.jar;C:\Users\kevin.hare\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.6.2\junit-jupiter-api-5.6.2.jar;C:\Users\kevin.hare\.m2\repository\org\apiguardian\apiguardian-api\1.1.0\apiguardian-api-1.1.0.jar;C:\Users\kevin.hare\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\kevin.hare\.m2\repository\org\junit\platform\junit-platform-commons\1.6.2\junit-platform-commons-1.6.2.jar;C:\Users\kevin.hare\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.6.2\junit-jupiter-params-5.6.2.jar;C:\Users\kevin.hare\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.6.2\junit-jupiter-engine-5.6.2.jar;C:\Users\kevin.hare\.m2\repository\org\junit\platform\junit-platform-engine\1.6.2\junit-platform-engine-1.6.2.jar;"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="C:\Users\kevin.hare"/>
+    <property name="user.language" value="en"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2024-01-16"/>
+    <property name="java.home" value="C:\Users\Public\Documents\Eclipse 2024-R\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.10.v20240120-1143\jre"/>
+    <property name="file.separator" value="\"/>
+    <property name="style.color" value="always"/>
+    <property name="basedir" value="C:\Users\kevin.hare\eclipse-workspace\unit-unknown-tests"/>
+    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="surefire.real.class.path" value="C:\Users\kevin.hare\AppData\Local\Temp\surefire3133492245655806383\surefirebooter-20250922093133740_3.jar"/>
+    <property name="user.script" value=""/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="java.runtime.version" value="17.0.10+7"/>
+    <property name="user.name" value="kevin.hare"/>
+    <property name="path.separator" value=";"/>
+    <property name="os.version" value="10.0"/>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="file.encoding" value="Cp1252"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="java.vendor.version" value="Temurin-17.0.10+7"/>
+    <property name="localRepository" value="C:\Users\kevin.hare\.m2\repository"/>
+    <property name="java.vendor.url.bug" value="https://github.com/adoptium/adoptium-support/issues"/>
+    <property name="java.io.tmpdir" value="C:\Users\KEVIN~1.HAR\AppData\Local\Temp\"/>
+    <property name="java.version" value="17.0.10"/>
+    <property name="user.dir" value="C:\Users\kevin.hare\eclipse-workspace\unit-unknown-tests"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="sun.os.patch.level" value=""/>
+    <property name="native.encoding" value="Cp1252"/>
+    <property name="java.library.path" value="C:\Users\Public\Documents\Eclipse 2024-R\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.10.v20240120-1143\jre\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:/Users/Public/Documents/Eclipse 2024-R//plugins/org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.10.v20240120-1143/jre/bin/server;C:/Users/Public/Documents/Eclipse 2024-R//plugins/org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.10.v20240120-1143/jre/bin;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Users\kevin.hare\AppData\Local\Microsoft\WindowsApps;C:\Users\kevin.hare\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\kevin.hare\AppData\Local\GitHubDesktop\bin;C:\Users\kevin.hare\AppData\Local\Programs\Git\cmd;C:\Users\Public\Documents\Eclipse 2024-R;;."/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="java.vendor" value="Eclipse Adoptium"/>
+    <property name="java.vm.version" value="17.0.10+7"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="java.class.version" value="61.0"/>
+  </properties>
+  <testcase name="testMiniSearchEngine" classname="unit0.Unit0Test" time="0.025"/>
+  <testcase name="testMostExpensiveItem" classname="unit0.Unit0Test" time="0.005"/>
+  <testcase name="testScannerCreate" classname="unit0.Unit0Test" time="0.003"/>
+  <testcase name="testSum" classname="unit0.Unit0Test" time="0.005"/>
+  <testcase name="testLineReads" classname="unit0.Unit0Test" time="0.002"/>
+  <testcase name="testMiniSearchEngineRavenCase" classname="unit0.Unit0Test" time="0.02">
+    <system-err><![CDATA[C:\Users\kevin.hare\eclipse-workspace\unit-unknown-tests\the_raven.md
+In there stepped a stately raven of the saintly days of yore;  
+And the Raven, never flitting, still is sitting, still is sitting  
+And the Raven, never flitting, still is sitting, still is sitting  
+But the Raven, never flitting, still is sitting, still is sitting  
+There stands a raven in the library, perched on a textbook spine,  
+And the Raven, never flitting, still is sitting, still is sitting  
+And so, dear student, if you see a raven in the quad at 3 a.m.,  
+And the Raven will reply:
+ans md5 f699503a344aebb1689465ac700ccb0a
+]]></system-err>
+  </testcase>
+  <testcase name="testSingleLineRead" classname="unit0.Unit0Test" time="0.006"/>
+  <testcase name="testCopyToOutput" classname="unit0.Unit0Test" time="0.007"/>
+  <testcase name="testCalculateBill" classname="unit0.Unit0Test" time="0.004"/>
+</testsuite>
