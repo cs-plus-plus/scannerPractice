@@ -1,0 +1,21 @@
+# Ignore everything
+*
+
+# Allow .gitignore itself
+!.gitignore
+
+# Re-allow the path down to the file
+!src/
+src/*
+
+!src/main/
+src/main/*
+
+!src/main/java/
+src/main/java/*
+
+!src/main/java/scanner/
+src/main/java/scanner/*
+
+# Keep just this file
+!src/main/java/scanner/ScannerPractice.java
