@@ -261,11 +261,20 @@ public class ScannerPracticeTest {
     
     @Test
     public void testMiniSearchEngineRavenCase() {
+    	
+    	// systemInfo();
+    	
+    	try {
+    		writeRavenPoem();
+    	} catch (IOException ex) {
+    		fail("Failed to write poem input file for test case.", ex);
+    	}
+    		
     	try {
     		ByteArrayOutputStream outContent = new ByteArrayOutputStream();
     		System.setOut(new PrintStream(outContent));
 
-    		System.err.println(new File("the_raven.md").getAbsolutePath());
+    		// System.err.println(new File("the_raven.md").getAbsolutePath());
     		
     		scan.searchFor("the_raven.md", "raven");
     		
@@ -285,5 +294,14 @@ public class ScannerPracticeTest {
 			ex.printStackTrace();
 			fail("File was not read from correctly. Is your path argument correct?", ex);
 		}
+    }
+    private void writeRavenPoem() throws IOException {
+    	// how to encode
+    	// go to "CyberChef" (search it up)
+    	// add an escape string block with double quotes that is json compatible and put the poem in
+    	// this is to workaround a stupid java "bug" that happens if we don't write the file oursleves at test time
+    	BufferedWriter bw = new BufferedWriter(new FileWriter("the_raven.md"));
+    	bw.write("Once upon a midnight dreary, while I pondered, weak and weary,  \nOver many a quaint and curious volume of forgotten lore\u2014  \nWhile I nodded, nearly napping, suddenly there came a tapping,  \nAs of someone gently rapping, rapping at my dorm room door.  \n\"'Tis some visitor,\" I muttered, \"tapping at my dorm room door\u2014  \nOnly this and nothing more.\"\n\nAh, distinctly I remember, it was in the bleak December,  \nAnd each separate dying ember wrought its ghost upon the floor.  \nEagerly I wished the morrow;\u2014vainly I had sought to borrow  \nFrom my books surcease of sorrow\u2014sorrow for the lost APs,  \nFor the ones who\u2019d never make it to the college admissions office  \nWith their 4.8 GPA and flawless extracurriculars.\n\nAnd the silken, sad, uncertain rustling of each purple curtain  \nThrilled me\u2014filled me with fantastic terrors never felt before;  \nSo that now, to still the beating of my heart, I stood repeating,  \n\"'Tis some visitor entreating entrance at my chamber door\u2014  \nSome late visitor entreating entrance at my chamber door;\u2014  \nThis it is and nothing more.\"\n\nPresently my soul grew stronger; hesitating then no longer,  \n\"Sir,\" said I, \"or Madam, truly your forgiveness I implore;  \nBut the fact is I was napping, and so gently you came rapping,  \nAnd so faintly you came tapping, tapping at my chamber door,  \nThat I scarce was sure I heard you\"\u2014here I opened wide the door;\u2014  \nDarkness there and nothing more.\n\nDeep into that darkness peering, long I stood there wondering, fearing,  \nDoubting, dreaming dreams no mortal ever dared to dream before;  \nBut the silence was unbroken, and the stillness gave no token,  \nAnd the only word there spoken was the whispered word, \"Lenore?\"  \nThis I whispered, and an echo murmured back the word, \"Lenore!\"\u2014  \nMerely this and nothing more.\n\nBack into the chamber turning, all my soul within me burning,  \nSoon again I heard a tapping somewhat louder than before.  \n\"Surely,\" said I, \"surely that is something at my window lattice;  \nLet me see, then, what there is, and this mystery explore\u2014  \nLet my heart be still a moment and this mystery explore;\u2014  \n'Tis the wind and nothing more!\"\n\nOpen here I flung the shutter, when, with many a flirt and flutter,  \nIn there stepped a stately raven of the saintly days of yore;  \nNot the least obeisance made he; not a minute stopped or stayed he;  \nBut, with mien of lord or lady, perched above my chamber door\u2014  \nPerched, and sat, and will not fly, and still is sitting, still is sitting  \nOn the pallid bust of Pallas just above my chamber door;  \nAnd his eyes have all the seeming of a demon\u2019s that is dreaming,  \nAnd the lamplight o\u2019er him streaming throws his shadow on the floor;  \nAnd my soul from out that shadow that lies floating on the floor  \nShall be lifted\u2014nevermore!\n\nAnd the Raven, never flitting, still is sitting, still is sitting  \nOn the pallid bust of Pallas just above my chamber door;  \nAnd his eyes have all the seeming of a demon\u2019s that is dreaming,  \nAnd the lamplight o\u2019er him streaming throws his shadow on the floor;  \nAnd my soul from out that shadow that lies floating on the floor  \nShall be lifted\u2014nevermore!\n\nAnd the Raven, never flitting, still is sitting, still is sitting  \nOn the pallid bust of Pallas just above my chamber door;  \nAnd his eyes have all the seeming of a demon\u2019s that is dreaming,  \nAnd the lamplight o\u2019er him streaming throws his shadow on the floor;  \nAnd my soul from out that shadow that lies floating on the floor  \nShall be lifted\u2014nevermore!\n\nBut the Raven, never flitting, still is sitting, still is sitting  \nOn the pallid bust of Pallas just above my chamber door;  \nAnd his eyes have all the seeming of a demon\u2019s that is dreaming,  \nAnd the lamplight o\u2019er him streaming throws his shadow on the floor;  \nAnd my soul from out that shadow that lies floating on the floor  \nShall be lifted\u2014nevermore!\n\nAnd now, in the hallowed halls of Canyon Crest Academy,  \nWhere the ivy climbs the brick and the SAT scores rise like fire,  \nThere stands a raven in the library, perched on a textbook spine,  \nWhispering, \u201c*No, you will not get into Stanford.*\u201d  \nAnd every student who walks past, with their 4.0 and their essay,  \nHears the echo: *\u201cNevermore.\u201d*  \nAnd the Raven, never flitting, still is sitting, still is sitting  \nOn the honor roll, just above the GPA calculator.  \nAnd his eyes have all the seeming of a college counselor\u2019s that is dreaming\u2026  \nAnd the lamplight o\u2019er him streaming throws his shadow on the floor\u2026  \nAnd my soul from out that shadow that lies floating on the floor  \nShall be lifted\u2014nevermore.\n\nAnd so, dear student, if you see a raven in the quad at 3 a.m.,  \nWith a backpack full of AP textbooks and a look of judgment in its eyes\u2026  \nDo not speak. Do not move.  \nJust whisper: *\u201cI just want to be happy.\u201d*  \nAnd the Raven will reply:  \n**\u201cNevermore.\u201d**");
+    	bw.close();
     }
 }
