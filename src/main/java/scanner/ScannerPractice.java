@@ -125,18 +125,6 @@ public class ScannerPractice {
      */
     public void searchFor(String filename, String query) throws FileNotFoundException {
         // TODO: implement
+        // Hint: Use .contains() some queries could have a period or comma, not just a space
     }
-
-    /**
-     * You may optionally use the following standard deviation calculation method for the next unit test.
-     *
-     * @param arr an array of values
-     * @return the sample standard deviation of arr
-     */
-    double stdDev(double[] arr) {
-        // TODO: implement
-        return 0.0;
-    }
-
-    // TODO: outlier detection
 }
