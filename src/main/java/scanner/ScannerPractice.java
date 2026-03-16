@@ -11,11 +11,21 @@ public class ScannerPractice {
      * A test file has been created, with its path stored in the filePath variable for you.
      */
     public static void main(String[] args) {
-        String filePath = "src//main//java//test_file.txt";
+        String filePath = "test.txt";
+        ScannerPractice sp = new ScannerPractice();
+
+        // Example: Create a scanner and check if it has content
+        try {
+            Scanner sc = sp.createScanner(filePath);
+            System.out.println("Scanner created successfully: " + (sc != null));
+            if (sc != null) sc.close();
+        } catch (FileNotFoundException e) {
+            System.out.println("File not found: " + filePath);
+        }
     }
 
     /**
-     * Method 1: Create the scanner object.
+     * Method 1 (10 points): Create the scanner object.
      * For this method, assume that the file with name fileName is in the current directory.
      * Return the scanner object to use later on.
      *
@@ -29,7 +39,7 @@ public class ScannerPractice {
     }
 
     /**
-     * Method 2: Read the next line in the file.
+     * Method 2 (10 points): Read the next line in the file.
      * Create a scanner object using previous functions within this method. Make sure to close the scanner at the end.
      * Print the next line in the file; make sure to check that a next line exists. If there is no next line, print
      * "No next line".
@@ -42,7 +52,7 @@ public class ScannerPractice {
     }
 
     /**
-     * Method 3: Read every line of the file and save it into an array.
+     * Method 3 (10 points): Read every line of the file and save it into an array.
      * Create a scanner object using previous functions within this method. Make sure to close the scanner at the end.
      * Return an array containing each file line as an element. Assume the file has numLines lines.
      *
@@ -57,7 +67,7 @@ public class ScannerPractice {
     }
 
     /**
-     * Method 4: Sum every integer value from the file.
+     * Method 4 (15 points): Sum every integer value from the file.
      * Create a scanner object using previous functions within this method. Make sure to close the scanner at the end.
      * The Scanner.hasNextInt() method may be helpful. Return the sum of every integer value in the file;
      * you may assume there is at least one integer contained in the file.
@@ -72,7 +82,7 @@ public class ScannerPractice {
     }
 
     /**
-     * Calculate the total bill by summing up items and adding tax.
+     * Method 5 (15 points): Calculate the total bill by summing up items and adding tax.
      * Each line is of the form "Roasted Duck 36.99".
      * taxProportion is something like 0.07.
      * Note: you must be within a few cents of the correct answer.
@@ -88,7 +98,7 @@ public class ScannerPractice {
     }
 
     /**
-     * Using the same format as the bill above, return the name of the most expensive item.
+     * Method 6 (10 points): Using the same format as the bill above, return the name of the most expensive item.
      * Lines are of the form "<name> <price>" where the last space separates the name from the price.
      *
      * @param fileName the file listing items and prices
@@ -101,7 +111,7 @@ public class ScannerPractice {
     }
 
     /**
-     * Print every line in the given file to standard output.
+     * Method 7 (10 points): Print every line in the given file to standard output.
      *
      * @param filename the file to copy to output
      * @throws FileNotFoundException if the file cannot be found
@@ -111,7 +121,7 @@ public class ScannerPractice {
     }
 
     /**
-     * Print all lines matching the query parameter (case-insensitive).
+     * Method 8 (10 points basic + 10 points Raven case): Print all lines matching the query parameter (case-insensitive).
      * For example, if the file is:
      * I like dogs
      * I like cats

@@ -1,6 +1,8 @@
 package scanner;
 
 import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import scanner.ScannerPractice;
@@ -22,6 +24,12 @@ import java.util.Scanner;
 public class ScannerPracticeTest {
 
     private final ScannerPractice scan = new ScannerPractice();
+    private final PrintStream originalOut = System.out;
+
+    @AfterEach
+    public void restoreSystemOut() {
+        System.setOut(originalOut);
+    }
 
     private String normalizeString(String str) {
     	return str.replaceAll("\r\n", "\n"); // convert CRLF to LF
@@ -50,6 +58,7 @@ public class ScannerPracticeTest {
     }
 
     @Test
+    @DisplayName("createScanner: Create Scanner for file I/O (10 points)")
     public void testScannerCreate() {
     	try {
 	        writeFile("test.txt", "Test content");
@@ -77,6 +86,7 @@ public class ScannerPracticeTest {
     }
     
     @Test
+    @DisplayName("readFile: Read file lines into array (10 points)")
     public void testLineReads() {
     	try {
 	        writeFile("line_read_test.txt", "Line 1\r\nAnother 2nd Line");
@@ -93,6 +103,7 @@ public class ScannerPracticeTest {
     }
 
     @Test
+    @DisplayName("sumInt: Sum integer tokens from file (15 points)")
     public void testSum() {
     	try {
 	        writeFile("numbers.txt", "6 9 3 1");
@@ -136,6 +147,7 @@ public class ScannerPracticeTest {
     }
     
     @Test
+    @DisplayName("calculateBill: Sum prices and apply tax (15 points)")
     public void testCalculateBill() {
     	try {
 	        writeFile("bill.txt", getFirstDinner());
@@ -156,6 +168,7 @@ public class ScannerPracticeTest {
     }
     
     @Test
+    @DisplayName("mostExpensiveItem: Find highest priced item (10 points)")
     public void testMostExpensiveItem() {
     	try {
 	        writeFile("bill.txt", getFirstDinner());
@@ -176,6 +189,7 @@ public class ScannerPracticeTest {
     }
 
     @Test
+    @DisplayName("copyFileToOutput: Print file contents to stdout (10 points)")
     public void testCopyToOutput() {
     	
     	String[] inputs = {"abcdef =D\n12345", "~!@#$%^&*()\n)(*&^%$#@!~"};
@@ -200,6 +214,7 @@ public class ScannerPracticeTest {
     }
     
     @Test
+    @DisplayName("readLine: Read and print first line of file (10 points)")
     public void testSingleLineRead() {
     	
     	String[] testCases = {"abcdefg\nhijklmnop\nxyz", "3\n2\n1"};
@@ -225,6 +240,7 @@ public class ScannerPracticeTest {
     }
     
     @Test
+    @DisplayName("searchFor: Case-insensitive line search (10 points)")
     public void testMiniSearchEngine() {
     	
     	String[][] testCases = {{
@@ -260,6 +276,7 @@ public class ScannerPracticeTest {
     
     
     @Test
+    @DisplayName("searchFor: Search poem for 'raven' (10 points)")
     public void testMiniSearchEngineRavenCase() {
     	
     	// systemInfo();

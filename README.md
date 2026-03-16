@@ -1,83 +1,103 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/_PPYcOQN)
+# Scanner Practice - Java File I/O
 
-# Scanner Practice Project
+Practice using `java.util.Scanner` for file input, parsing, and text processing.
 
-This project is for Mr. Hare’s APCS-A and focuses on using `java.util.Scanner` for file I/O, parsing, and simple aggregation. You will implement methods in `ScannerPractice.java` and verify them with unit tests.
+## Getting Started with GitHub Codespaces
+
+1. Click the green **"Code"** button at the top of this repository
+2. Select the **"Codespaces"** tab
+3. Click **"Create codespace on main"**
+4. Wait for the environment to load (this may take a few minutes the first time)
+5. Once loaded, you can edit code and run tests directly in the browser
+
+> **Note:** If the Java extension shows errors on first load, press `Cmd+Shift+P` (Mac) or `Ctrl+Shift+P` (Windows) and run **"Developer: Reload Window"**. This is a one-time setup step.
+
+## Alternative: Local Development
+
+1. Accept the assignment via the GitHub Classroom link in Google Classroom
+2. Clone the repository using GitHub Desktop
+3. Open in VS Code or IntelliJ IDEA
+4. Make sure you have Java 17+ and Maven installed
 
 ## Project Structure
 
-- `src/main/java/scanner/ScannerPractice.java` — method headers and task descriptions. Implement the bodies.
-- `src/test/java/scanner/ScannerPracticeTest.java` — JUnit tests that validate your implementations.
-- `pom.xml` — Maven configuration for building and running tests.
-- Test data files may be referenced by tests; if provided, they will be placed in `src/test/resources/`.
+- `src/main/java/scanner/ScannerPractice.java` — Implement your methods here
+- `src/test/java/scanner/ScannerPracticeTest.java` — Tests that verify your work
+- `pom.xml` — Maven project configuration
 
-## Prerequisites
+## Running Tests
 
-- Java 17 (or compatible)
-- Maven 3.x
-- An IDE (IntelliJ/Eclipse) or GitHub Desktop for cloning
+### In VS Code / Codespaces
+- Click the **Testing** icon (flask) in the left sidebar
+- Click the **Run All Tests** button
+- Or right-click individual tests to run them one at a time
 
-## Getting Started
+### From the Command Line
+```bash
+mvn test
+```
 
-1. Accept the assignment using the link in Google Classroom.
-2. Clone the repository locally (GitHub Desktop recommended).
-3. Open the project in your IDE.
+To run a single test:
+```bash
+mvn -Dtest=ScannerPracticeTest#testScannerCreate test
+```
 
-### Running Tests
+## Scoring
 
-- From the IDE: run `ScannerPracticeTest`.
-- From the terminal:
-  ```bash
-  mvn -q test
-  ```
+| Method | Points | Description |
+|--------|--------|-------------|
+| `createScanner` | 10 | Create a Scanner for file reading |
+| `readLine` | 10 | Read and print first line of a file |
+| `readFile` | 10 | Read all lines into a String array |
+| `sumInt` | 15 | Sum all integer tokens in a file |
+| `calculateBill` | 15 | Sum prices and apply tax |
+| `mostExpensiveItem` | 10 | Find the most expensive item by name |
+| `copyFileToOutput` | 10 | Print entire file to standard output |
+| `searchFor` (basic) | 10 | Case-insensitive line search |
+| `searchFor` (Raven) | 10 | Search a poem for matching lines |
+| **Total** | **100** | |
 
-## Methods to Implement (in `ScannerPractice.java`)
+## Method Details
 
-1. `Scanner createScanner(String fileName)`  
-   Create and return a `Scanner` for a file in the current working directory. May throw `FileNotFoundException`.
+### `createScanner(String fileName)` — 10 pts
+Create and return a `Scanner` for the given filename. The file is in the current working directory.
 
-2. `void readLine(String fileName)`  
-   Print the next line of the file to standard output. If there is no next line, print `No next line`. Close the scanner you create.
+### `readLine(String fileName)` — 10 pts
+Print the **first line** of the file. If no line exists, print `"No next line"`. Close the scanner when done.
 
-3. `String[] readFile(String fileName, int numLines)`  
-   Read all lines and return them in an array of length `numLines`. Close the scanner you create.
+### `readFile(String fileName, int numLines)` — 10 pts
+Read all lines and return them in a `String[]` of length `numLines`. Close the scanner when done.
 
-4. `int sumInt(String fileName)`  
-   Sum all integer tokens in the file using `hasNextInt()` and return the total. Close the scanner you create.
+### `sumInt(String fileName)` — 15 pts
+Sum all integer tokens using `hasNextInt()` / `nextInt()`. Close the scanner when done.
 
-5. `double calculateBill(String fileName, double taxProportion)`  
-   Each line is like `Roasted Duck 36.99`. Sum the prices and return the total with tax applied. Aim to be within a few cents of the correct answer.
+### `calculateBill(String fileName, double taxProportion)` — 15 pts
+Each line is like `"Roasted Duck 36.99"`. Sum the prices (last token per line) and return total × (1 + taxProportion).
 
-6. `String mostExpensiveItem(String fileName)`  
-   Using the same format as above, return the name (text before the last space) of the most expensive item. Return `""` if none found.
+### `mostExpensiveItem(String fileName)` — 10 pts
+Same format as above. Return the **name** (everything before the last space) of the most expensive item.
 
-7. `void copyFileToOutput(String filename)`  
-   Print every line in the file to standard output.
+### `copyFileToOutput(String filename)` — 10 pts
+Print every line of the file to standard output.
 
-8. `void searchFor(String filename, String query)`  
-   Case-insensitive search. Print each line that contains `query`. If no lines match, print `No results.`
-
-9. `double stdDev(double[] arr)`  
-   Optional helper for later tests. Return the sample standard deviation.
-
-## Notes and Tips
-
-- Always close any `Scanner` you create to avoid resource leaks.
-- Paths are relative to the process working directory. For Maven tests, place test files in `src/test/resources/` and load them via the classpath if needed.
-- Normalize output carefully when comparing strings in tests. Be mindful of spaces and line endings.
-- Handle parsing errors gracefully where applicable; tests will define expected behavior.
+### `searchFor(String filename, String query)` — 10+10 pts
+Print every line containing the query (case-insensitive). If no matches, print `"No results."`.
 
 ## Common Mistakes
 
-- Forgetting to close the `Scanner`.
-- Using `nextLine()` and `nextInt()` together without consuming leftover newlines.
-- Not checking `hasNextLine()` or `hasNextInt()` before reading.
-- Incorrectly splitting lines when extracting the final price token.
+- **Forgetting to close the Scanner** — always call `scanner.close()` when done
+- **Wrong file path** — the file is in the **current working directory**, not inside `src/`
+- **Mixing `nextLine()` with `nextInt()`** — consumes the newline character differently
+- **Not checking `hasNextLine()` / `hasNextInt()`** before reading
+- **Case sensitivity** — `searchFor` should be case-**insensitive** (use `.toLowerCase()`)
+- **Splitting lines incorrectly** — for bill methods, the price is the **last token** on each line
 
-## Contributing
+## How Autograding Works
 
-Open an issue or submit a pull request if you find a bug or have a suggestion.
+When you push your code to GitHub, the autograding workflow runs each test individually and assigns points based on the scoring table above. Check the **Actions** tab to see your score.
 
-## Contact
+## Need Help?
 
-Questions? Email Mr. Hare at kevin@csplusplus.com.
+- Check the Javadoc comments in `ScannerPractice.java` for hints
+- Review the test file to understand expected inputs and outputs
+- Contact Mr. Hare at kevin@csplusplus.com
