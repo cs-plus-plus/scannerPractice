@@ -20,7 +20,7 @@ jobs:
         distribution: 'temurin'
     - name: scannerCreate
       id: scannercreate
-      uses: classroom-resources/autograding-command-grader@v1
+      uses: cs-plus-plus/autograding-command-grader@v1
       with:
         test-name: scannerCreate
         setup-command: "mvn compile"
@@ -29,7 +29,7 @@ jobs:
         max-score: 10
     - name: lineReads
       id: linereads
-      uses: classroom-resources/autograding-command-grader@v1
+      uses: cs-plus-plus/autograding-command-grader@v1
       with:
         test-name: lineReads
         setup-command: mvn compile
@@ -38,7 +38,7 @@ jobs:
         max-score: 10
     - name: sum
       id: sum
-      uses: classroom-resources/autograding-command-grader@v1
+      uses: cs-plus-plus/autograding-command-grader@v1
       with:
         test-name: sum
         setup-command: mvn compile
@@ -47,7 +47,7 @@ jobs:
         max-score: 15
     - name: calculateBill
       id: calculatebill
-      uses: classroom-resources/autograding-command-grader@v1
+      uses: cs-plus-plus/autograding-command-grader@v1
       with:
         test-name: calculateBill
         setup-command: mvn compile
@@ -56,7 +56,7 @@ jobs:
         max-score: 15
     - name: mostExpensiveItem
       id: mostexpensiveitem
-      uses: classroom-resources/autograding-command-grader@v1
+      uses: cs-plus-plus/autograding-command-grader@v1
       with:
         test-name: mostExpensiveItem
         setup-command: mvn compile
@@ -65,7 +65,7 @@ jobs:
         max-score: 10
     - name: copyToOutput
       id: copytooutput
-      uses: classroom-resources/autograding-command-grader@v1
+      uses: cs-plus-plus/autograding-command-grader@v1
       with:
         test-name: copyToOutput
         setup-command: mvn compile
@@ -74,7 +74,7 @@ jobs:
         max-score: 10
     - name: singleLineRead
       id: singlelineread
-      uses: classroom-resources/autograding-command-grader@v1
+      uses: cs-plus-plus/autograding-command-grader@v1
       with:
         test-name: singleLineRead
         setup-command: mvn compile
@@ -83,7 +83,7 @@ jobs:
         max-score: 10
     - name: miniSearchEngine
       id: minisearchengine
-      uses: classroom-resources/autograding-command-grader@v1
+      uses: cs-plus-plus/autograding-command-grader@v1
       with:
         test-name: miniSearchEngine
         setup-command: mvn compile
@@ -92,7 +92,7 @@ jobs:
         max-score: 10
     - name: miniSearchEngineRavenCase
       id: minisearchengineravencase
-      uses: classroom-resources/autograding-command-grader@v1
+      uses: cs-plus-plus/autograding-command-grader@v1
       with:
         test-name: miniSearchEngineRavenCase
         setup-command: mvn compile
@@ -100,7 +100,7 @@ jobs:
         timeout: 10
         max-score: 10
     - name: Autograding Reporter
-      uses: classroom-resources/autograding-grading-reporter@v1
+      uses: cs-plus-plus/autograding-grading-reporter@v1
       env:
         SCANNERCREATE_RESULTS: "${{steps.scannercreate.outputs.result}}"
         LINEREADS_RESULTS: "${{steps.linereads.outputs.result}}"
