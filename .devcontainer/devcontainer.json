@@ -17,6 +17,13 @@
         "vscjava.vscode-maven"
       ],
       "settings": {
+        // Hide dot-folders (.github, .devcontainer, .vscode) so students only see their
+        // code. Turn off Copilot/AI chat: VS Code opens its Chat panel before these
+        // settings load, so hiding it is the only way it stays closed (students can
+        // turn it back on in Settings).
+        "files.exclude": { "**/.*": true },
+        "chat.disableAIFeatures": true,
+        "workbench.secondarySideBar.defaultVisibility": "hidden",
         "java.compile.nullAnalysis.mode": "disabled"
       }
     }
